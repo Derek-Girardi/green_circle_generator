@@ -1,8 +1,18 @@
-{"questions":[
-  {"textQuestion": "AM I WORKING PLEASE", "difficulty": "easy" },
-  {"textQuestion": "MORE TEST", "difficulty": "easy" },
-  {"textQuestion": "MOsdadasdasdas", "difficulty": "easy" },
-  {"textQuestion": "BOOT LEG FIREWORKS BOIII", "difficulty": "easy" },
-  {"textQuestion": "yeehaw", "difficulty": "easy" }
-
-]}
+{"easyQuestions":[
+  {"textQuestion": "Would you rather wake up early or go to bed early?"},
+  {"textQuestion": "What is your favorite toy?"},
+  {"textQuestion": "Do you sleep with a stuffed animal?"},
+  {"textQuestion": "Who wakes you up in the morning?"},
+  {"textQuestion": "Would you rather eat breakfast for dinner or dessert for breakfast?"},
+  {"textQuestion": "If you were stuck outside for an entire day what would you do? "},
+  {"textQuestion": "Would you rather spend a day in the swimming pool or a day playing video games?"},
+  {"textQuestion": "What do you like more?  Puzzles or Coloring Books?"},
+  {"textQuestion": "Would you rather spend a day at the zoo or a day at the amusement park?"}
+],
+"mediumQuestions":[
+    {"textQuestion": "yeehaw"}
+],
+"hardQuestions":[
+    {"textQuestion": "woop"}
+]
+}

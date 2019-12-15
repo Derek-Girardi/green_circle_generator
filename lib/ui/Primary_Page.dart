@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:green_circle_generator/models/questions.dart';
 
+
 class PrimaryPage extends StatefulWidget {
   @override
   PrimaryPageState createState() => PrimaryPageState();
@@ -54,6 +55,17 @@ class PrimaryPageState extends State<PrimaryPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
+      appBar: AppBar(
+        automaticallyImplyLeading: true,
+        //`true` if you want Flutter to automatically add Back Button when needed,
+        //or `false` if you want to force your own back button every where
+        title: Text('Primary Questions'),
+        leading: IconButton(icon:Icon(Icons.arrow_back),
+          onPressed:() => Navigator.pop(context, false),
+        ),
+        centerTitle: true,
+       ),
       body: Container(
           child: Center(
               child: new FutureBuilder(
@@ -64,42 +76,43 @@ class PrimaryPageState extends State<PrimaryPage> {
                       return PageView.builder(
                           controller: controller,
                           scrollDirection: Axis.horizontal,
-                          itemCount: questions.questions.length,
+                          itemCount: questions.easyQuestions.length,
                           itemBuilder: (BuildContext context, position) {
                             return Center(
                               child: Text(
-                                "${questions.questions[position].textQuestion}",
+                                "${questions.easyQuestions[position].textQuestion}",
                                 style: TextStyle(
-                                    fontSize: 50.0,
+                                    fontSize: 20.0,
                                     fontWeight: FontWeight.bold,
-                                    color: Colors.yellow),
+                                    color: Colors.blue),
                               ),
                             );
                           });
                     }
                     return CircularProgressIndicator();
-                  }))),
+                  }))),           
       bottomNavigationBar: ButtonBar(
         mainAxisSize: MainAxisSize.min,
+        alignment: MainAxisAlignment.center,
         children: <Widget>[
           new MaterialButton(
-              color: Colors.blue,
+              color: Color(0xff98ff98),
               textColor: Colors.white,
               splashColor: Colors.blueGrey,
               onPressed: () => {},
-              child: new Text("Easy")),
+              child: new Text("Shallow")),
           new MaterialButton(
-              color: Colors.blue,
+              color: Color(0xff98ff98),
               textColor: Colors.white,
               splashColor: Colors.blueGrey,
               onPressed: () => {},
-              child: new Text("Medium")),
+              child: new Text("Middle")),
           new MaterialButton(
-              color: Colors.blue,
+              color: Color(0xff98ff98),
               textColor: Colors.white,
               splashColor: Colors.blueGrey,
               onPressed: () => {},
-              child: new Text("Hard"))
+              child: new Text("Deep"))
         ],
       ),
     );

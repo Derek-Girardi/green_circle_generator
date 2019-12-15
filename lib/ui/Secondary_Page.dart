@@ -11,6 +11,7 @@ class SecondaryPage extends StatefulWidget {
 class SecondaryPageState extends State<SecondaryPage> {
 PageController controller = PageController();
   Animatable<Color> background;
+ // String test = "${hardQuestions[0].textQuestion}";
 
   @override
   void initState() {
@@ -55,6 +56,17 @@ PageController controller = PageController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
+      appBar: AppBar(
+        automaticallyImplyLeading: true,
+        //`true` if you want Flutter to automatically add Back Button when needed,
+        //or `false` if you want to force your own back button every where
+        title: Text('Secondary Questions'),
+        leading: IconButton(icon:Icon(Icons.arrow_back),
+          onPressed:() => Navigator.pop(context, false),
+        ),
+        centerTitle: true,
+       ),
       body: Container(
           child: Center(
               child: new FutureBuilder(
@@ -65,11 +77,11 @@ PageController controller = PageController();
                       return PageView.builder(
                           controller: controller,
                           scrollDirection: Axis.horizontal,
-                          itemCount: questions.questions.length,
+                          itemCount: questions.hardQuestions.length,
                           itemBuilder: (BuildContext context, position) {
                             return Center(
                               child: Text(
-                                "${questions.questions[position].textQuestion}",
+                                "${questions.hardQuestions[position].textQuestion}",
                                 style: TextStyle(
                                     fontSize: 50.0,
                                     fontWeight: FontWeight.bold,
@@ -82,25 +94,26 @@ PageController controller = PageController();
                   }))),
       bottomNavigationBar: ButtonBar(
         mainAxisSize: MainAxisSize.min,
+        alignment: MainAxisAlignment.center,
         children: <Widget>[
           new MaterialButton(
-              color: Colors.blue,
+              color: Color(0xff98ff98),
               textColor: Colors.white,
               splashColor: Colors.blueGrey,
               onPressed: () => {},
-              child: new Text("Easy")),
+              child: new Text("Shallow")),
           new MaterialButton(
-              color: Colors.blue,
+              color: Color(0xff98ff98),
               textColor: Colors.white,
               splashColor: Colors.blueGrey,
               onPressed: () => {},
-              child: new Text("Medium")),
+              child: new Text("Middle")),
           new MaterialButton(
-              color: Colors.blue,
+              color: Color(0xff98ff98),
               textColor: Colors.white,
               splashColor: Colors.blueGrey,
               onPressed: () => {},
-              child: new Text("Hard"))
+              child: new Text("Deep"))
         ],
       ),
     );
