@@ -21,7 +21,6 @@ dependencies:
     sdk: flutter
   path_provider: any
   simple_coverflow: any
-  carousel: ^0.0.1
   flutter_mobile_carousel: ^1.0.2
 
   # The following adds the Cupertino Icons font to your application.
@@ -34,6 +33,9 @@ dev_dependencies:
 
 dependency_overrides:
   carousel: "^0.1.0"   
+
+module:
+  androidX: true 
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

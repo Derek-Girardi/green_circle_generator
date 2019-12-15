@@ -16,7 +16,7 @@ packages:
     source: hosted
     version: "1.0.5"
   carousel:
-    dependency: "direct main"
+    dependency: "direct overridden"
     description:
       name: carousel
       url: "https://pub.dartlang.org"
