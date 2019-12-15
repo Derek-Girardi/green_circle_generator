@@ -11,8 +11,9 @@ class PrimaryPage extends StatefulWidget {
 class PrimaryPageState extends State<PrimaryPage> {
   PageController controller = PageController();
   Animatable<Color> background;
+  int _difficulty;
 
-  @override
+   /* @override
   void initState() {
     _initialize();
     super.initState();
@@ -50,7 +51,11 @@ class PrimaryPageState extends State<PrimaryPage> {
     controller.dispose();
     _initialize();
     super.reassemble();
-  }
+  }*/
+
+  Future<String> _loadAsset() async {
+  return await rootBundle.loadString('lib/assets/questions.json');
+}
 
   @override
   Widget build(BuildContext context) {
@@ -69,18 +74,24 @@ class PrimaryPageState extends State<PrimaryPage> {
       body: Container(
           child: Center(
               child: new FutureBuilder(
-                  future: rootBundle.loadString('lib/assets/questions.json'),
+                  future: _loadAsset(),
                   builder: (BuildContext context, AsyncSnapshot snap) {
                     if (snap.hasData) {
                       var questions = questionsFromJson(snap.data);
                       return PageView.builder(
                           controller: controller,
                           scrollDirection: Axis.horizontal,
-                          itemCount: questions.easyQuestions.length,
+                          itemCount: (_difficulty==1)?questions.easyQuestions.length:    //TODO: make this robust, good for now though.
+                              (_difficulty==2)?questions.mediumQuestions.length:
+                              (_difficulty==3)?questions.hardQuestions.length:
+                              questions.easyQuestions.length,
+                          //itemCount: questions.easyQuestions.length,
                           itemBuilder: (BuildContext context, position) {
                             return Center(
-                              child: Text(
-                                "${questions.easyQuestions[position].textQuestion}",
+                              child: Text((_difficulty==1)?"${questions.easyQuestions[position].textQuestion}":    //TODO: make this robust, good for now though.
+                              (_difficulty==2)?"${questions.mediumQuestions[position].textQuestion}":
+                              (_difficulty==3)?"${questions.hardQuestions[position].textQuestion}":
+                              "${questions.easyQuestions[position].textQuestion}",
                                 style: TextStyle(
                                     fontSize: 20.0,
                                     fontWeight: FontWeight.bold,
@@ -97,21 +108,33 @@ class PrimaryPageState extends State<PrimaryPage> {
         children: <Widget>[
           new MaterialButton(
               color: Color(0xff98ff98),
-              textColor: Colors.white,
+              textColor: Colors.blueGrey,
               splashColor: Colors.blueGrey,
-              onPressed: () => {},
+              onPressed: () => {
+                setState((){
+                  _difficulty = 1;
+                })
+              },
               child: new Text("Shallow")),
           new MaterialButton(
               color: Color(0xff98ff98),
-              textColor: Colors.white,
+              textColor: Colors.blueGrey,
               splashColor: Colors.blueGrey,
-              onPressed: () => {},
+              onPressed: () => {
+                setState((){
+                  _difficulty = 2;
+                })
+              },
               child: new Text("Middle")),
           new MaterialButton(
               color: Color(0xff98ff98),
-              textColor: Colors.white,
+              textColor: Colors.blueGrey,
               splashColor: Colors.blueGrey,
-              onPressed: () => {},
+              onPressed: () => {
+                setState((){
+                  _difficulty = 3;
+                })
+              },
               child: new Text("Deep"))
         ],
       ),

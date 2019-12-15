@@ -10,9 +10,27 @@
   {"textQuestion": "Would you rather spend a day at the zoo or a day at the amusement park?"}
 ],
 "mediumQuestions":[
-    {"textQuestion": "yeehaw"}
+    {"textQuestion": "What would you do on a snowy day?"},
+    {"textQuestion": "What is the most caring thing someone has done for you?"},
+    {"textQuestion": "My class makes me feel…"},
+    {"textQuestion": "A rainy day makes me feel…"},
+    {"textQuestion": "What is the first thing you look forward to when you get to school?"},
+    {"textQuestion": "Who is someone in your life that you really admire?"},
+    {"textQuestion": "What is something you would like to get better at?"},
+    {"textQuestion": "The key to being happy is…"},
+    {"textQuestion": "How would you like others to treat you?"},
+    {"textQuestion": "What was the best gift you have ever received?"}
 ],
 "hardQuestions":[
-    {"textQuestion": "woop"}
+    {"textQuestion": "If you had a bucket of popcorn, who would you share it with?"},
+    {"textQuestion": "What makes you sad?"},
+    {"textQuestion": "Who would you call right now if you were guaranteed they would answer the phone?"},
+    {"textQuestion": "What is one toy/stuffed animal that you lost/broke and wish you could have back?"},
+    {"textQuestion": "What gives you butterflies in stomach?"},
+    {"textQuestion": "Who do you wish would hug you more?"},
+    {"textQuestion": "If you could make a wish for someone else, what would you wish?"},
+    {"textQuestion": "What message would you record for a bully?"},
+    {"textQuestion": "I love my teacher because… (Teacher- I love my students because…)"},
+    {"textQuestion": "I feel hurt when…"}
 ]
 }
