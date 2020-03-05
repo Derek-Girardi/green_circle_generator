@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:green_circle_generator/models/questions.dart';
+import 'dart:math';
 
 class SecondaryPage extends StatefulWidget {
   // final question = questionFromJson("jsonString");
@@ -12,9 +13,9 @@ class SecondaryPageState extends State<SecondaryPage> {
 PageController controller = PageController();
   Animatable<Color> background;
   int _difficulty;
- 
+ final _random = new Random();
 
- /* @override
+   /* @override
   void initState() {
     _initialize();
     super.initState();
@@ -54,9 +55,23 @@ PageController controller = PageController();
     super.reassemble();
   }*/
 
- Future<String> _loadAsset() async {
+  Future<String> _loadAsset() async {
   return await rootBundle.loadString('lib/assets/questions.json');
 }
+
+ //@override
+  //void initState() {
+   // controller = PageController(
+    //  keepPage: false,
+   // );
+  //  super.initState();
+ // }
+
+ // @override
+ // void dispose() {
+ //   controller.dispose();
+  //  super.dispose();
+ // }
 
   @override
   Widget build(BuildContext context) {
@@ -86,13 +101,14 @@ PageController controller = PageController();
                               (_difficulty==2)?questions.mediumQuestions.length:
                               (_difficulty==3)?questions.hardQuestions.length:
                               questions.easyQuestions.length,
+                              
                           //itemCount: questions.easyQuestions.length,
-                          itemBuilder: (BuildContext context, position) {
+                          itemBuilder: (BuildContext context, _position) {
                             return Center(
-                              child: Text((_difficulty==1)?"${questions.easyQuestions[position].textQuestion}":    //TODO: make this robust, good for now though.
-                              (_difficulty==2)?"${questions.mediumQuestions[position].textQuestion}":
-                              (_difficulty==3)?"${questions.hardQuestions[position].textQuestion}":
-                              "${questions.easyQuestions[position].textQuestion}",
+                              child: Text((_difficulty==1)?"${questions.easyQuestions[_random.nextInt(questions.easyQuestions.length)].textQuestion}":    //TODO: make this robust, good for now though.
+                              (_difficulty==2)?"${questions.mediumQuestions[_random.nextInt(questions.mediumQuestions.length)].textQuestion}":
+                              (_difficulty==3)?"${questions.hardQuestions[_random.nextInt(questions.hardQuestions.length)].textQuestion}":
+                              "${questions.easyQuestions[_random.nextInt(questions.easyQuestions.length)].textQuestion}",
                                 style: TextStyle(
                                     fontSize: 20.0,
                                     fontWeight: FontWeight.bold,
@@ -102,7 +118,7 @@ PageController controller = PageController();
                           });
                     }
                     return CircularProgressIndicator();
-                  }))),
+                  }))),           
       bottomNavigationBar: ButtonBar(
         mainAxisSize: MainAxisSize.min,
         alignment: MainAxisAlignment.center,
@@ -114,6 +130,7 @@ PageController controller = PageController();
               onPressed: () => {
                 setState((){
                   _difficulty = 1;
+                  controller.jumpToPage(0);
                 })
               },
               child: new Text("Shallow")),
@@ -124,6 +141,7 @@ PageController controller = PageController();
               onPressed: () => {
                 setState((){
                   _difficulty = 2;
+                  controller.jumpToPage(0);
                 })
               },
               child: new Text("Middle")),
@@ -134,6 +152,7 @@ PageController controller = PageController();
               onPressed: () => {
                 setState((){
                   _difficulty = 3;
+                  controller.jumpToPage(0);
                 })
               },
               child: new Text("Deep"))
