@@ -1,8 +1,36 @@
-{"questions":[
-  {"textQuestion": "AM I WORKING PLEASE", "difficulty": "easy" },
-  {"textQuestion": "MORE TEST", "difficulty": "easy" },
-  {"textQuestion": "MOsdadasdasdas", "difficulty": "easy" },
-  {"textQuestion": "BOOT LEG FIREWORKS BOIII", "difficulty": "easy" },
-  {"textQuestion": "yeehaw", "difficulty": "easy" }
-
-]}
+{"easyQuestions":[
+  {"textQuestion": "Would you rather wake up early or go to bed early?"},
+  {"textQuestion": "What is your favorite toy?"},
+  {"textQuestion": "Do you sleep with a stuffed animal?"},
+  {"textQuestion": "Who wakes you up in the morning?"},
+  {"textQuestion": "Would you rather eat breakfast for dinner or dessert for breakfast?"},
+  {"textQuestion": "If you were stuck outside for an entire day what would you do? "},
+  {"textQuestion": "Would you rather spend a day in the swimming pool or a day playing video games?"},
+  {"textQuestion": "What do you like more?  Puzzles or Coloring Books?"},
+  {"textQuestion": "Would you rather spend a day at the zoo or a day at the amusement park?"}
+],
+"mediumQuestions":[
+    {"textQuestion": "What would you do on a snowy day?"},
+    {"textQuestion": "What is the most caring thing someone has done for you?"},
+    {"textQuestion": "My class makes me feel…"},
+    {"textQuestion": "A rainy day makes me feel…"},
+    {"textQuestion": "What is the first thing you look forward to when you get to school?"},
+    {"textQuestion": "Who is someone in your life that you really admire?"},
+    {"textQuestion": "What is something you would like to get better at?"},
+    {"textQuestion": "The key to being happy is…"},
+    {"textQuestion": "How would you like others to treat you?"},
+    {"textQuestion": "What was the best gift you have ever received?"}
+],
+"hardQuestions":[
+    {"textQuestion": "If you had a bucket of popcorn, who would you share it with?"},
+    {"textQuestion": "What makes you sad?"},
+    {"textQuestion": "Who would you call right now if you were guaranteed they would answer the phone?"},
+    {"textQuestion": "What is one toy/stuffed animal that you lost/broke and wish you could have back?"},
+    {"textQuestion": "What gives you butterflies in stomach?"},
+    {"textQuestion": "Who do you wish would hug you more?"},
+    {"textQuestion": "If you could make a wish for someone else, what would you wish?"},
+    {"textQuestion": "What message would you record for a bully?"},
+    {"textQuestion": "I love my teacher because… (Teacher- I love my students because…)"},
+    {"textQuestion": "I feel hurt when…"}
+]
+}

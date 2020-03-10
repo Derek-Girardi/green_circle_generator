@@ -12,7 +12,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Green Circle Generator',
       theme: ThemeData(
-          primarySwatch: Colors.indigo,
+          primarySwatch: Colors.green,
+          brightness: Brightness.dark,
           canvasColor: Colors.transparent
       ),
       home: HomePage(),
