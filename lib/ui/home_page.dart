@@ -7,52 +7,89 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Color(0xffF1F1F1),
       appBar: AppBar(
+        backgroundColor: Color(0xffF1F1F1),
         centerTitle: true,
-        title: Text('Test Questions'),
-       ),
+        title:
+            Text('Test Questions', style: TextStyle(color: Color(0xff222222))),
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 75.0, horizontal: 16.0),
-              child: MaterialButton(
-                minWidth: 200.0,
-                height: 150.0,
-                color: Color(0xff98ff98),
-                textColor: Colors.white,
-                splashColor: Colors.blueGrey,
-                shape: RoundedRectangleBorder(
-                    borderRadius: new BorderRadius.circular(30.0)),
-                onPressed: () => Navigator.push(context, SlideLeftRoute(page: PrimaryPage())),//PrimaryPage
-                child: Text(
-                  "K - 4",
-                  style: new TextStyle(
-                    fontSize: 40.0,
-                    color: Colors.lightBlueAccent,
+              padding: EdgeInsets.symmetric(vertical: 65.0, horizontal: 100.0),
+              child: Container(
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                        color: Colors.black,
+                        offset: Offset(0, 1),
+                        blurRadius: 2.0)
+                  ],
+                  shape: BoxShape.circle,
+                  color: Color(0xffF1F1F1),
+                ),
+                child: Material(
+                  child: InkWell(
+                    borderRadius: BorderRadius.circular(100.0),
+                    onTap: () => Navigator.push(
+                        context, SlideLeftRoute(page: PrimaryPage())),
+                    splashColor: Color(0xffC87140),
+                    child: Container(
+                      width: 150,
+                      height: 150,
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border:
+                              Border.all(width: 4, color: Color(0xff222222))),
+                      child: Center(
+                        child: Text("K - 4",
+                            style: new TextStyle(
+                              fontSize: 20.0,
+                              color: Color(0xff222222),
+                            )),
+                      ),
+                    ),
                   ),
                 ),
               ),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 75.0, horizontal: 16.0),
-              child: MaterialButton(
-                minWidth: 200.0,
-                height: 150.0,
-                color: Color(0xff98ff98),
-                textColor: Colors.white,
-                splashColor: Colors.blueGrey,
-                shape: RoundedRectangleBorder(
-                    borderRadius: new BorderRadius.circular(30.0)),
-                onPressed: () => Navigator.push(context, SlideLeftRoute(page: SecondaryPage())),
-                child: Text(
-                  "4 - 8",
-                  style: TextStyle(
-                    fontSize: 40.0,
-                    color: Colors.lightBlueAccent,
+              padding: EdgeInsets.symmetric(vertical: 65.0, horizontal: 16.0),
+              child: Container(
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                        color: Colors.black,
+                        offset: Offset(0, 1),
+                        blurRadius: 2.0)
+                  ],
+                  shape: BoxShape.circle,
+                  color: Color(0xffF1F1F1),
+                ),
+                child: Material(
+                  child: InkWell(
+                    borderRadius: BorderRadius.circular(100.0),
+                    onTap: () => Navigator.push(
+                        context, SlideLeftRoute(page: SecondaryPage())),
+                    splashColor: Color(0xffC87140),
+                    child: Container(
+                      width: 150,
+                      height: 150,
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border:
+                              Border.all(width: 4, color: Color(0xff222222))),
+                      child: Center(
+                        child: Text("5 - 8",
+                            style: new TextStyle(
+                              fontSize: 20.0,
+                              color: Color(0xff222222),
+                            )),
+                      ),
+                    ),
                   ),
                 ),
               ),
