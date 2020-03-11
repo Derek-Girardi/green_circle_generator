@@ -26,7 +26,6 @@ class PrimaryPageState extends State<PrimaryPage> {
     super.initState();
   }
 
-
   //@override
   //void initState() {
   // controller = PageController(
@@ -50,7 +49,7 @@ class PrimaryPageState extends State<PrimaryPage> {
         backgroundColor: Color(0xffF1F1F1),
         //`true` if you want Flutter to automatically add Back Button when needed,
         //or `false` if you want to force your own back button every where
-        title: Text('Primary Questions', style: TextStyle(color: Color(0xff222222))),
+        title: Text("K - 4", style: TextStyle(color: Color(0xff222222))),
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           color: Color(0xff222222),
@@ -75,24 +74,25 @@ class PrimaryPageState extends State<PrimaryPage> {
                                   : (_difficulty == 3)
                                       ? questions.hardQuestions.length
                                       : questions.easyQuestions.length,
-
                           itemBuilder: (BuildContext context, _position) {
                             return Center(
-                              child: Text(
-                                (_difficulty == 1)
+                                child: Container(
+                                padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
+                                  child: Text(
+                                  (_difficulty == 1)
                                     ? "${questions.easyQuestions[_random.nextInt(questions.easyQuestions.length)].textQuestion}"
                                     : (_difficulty == 2)
                                         ? "${questions.mediumQuestions[_random.nextInt(questions.mediumQuestions.length)].textQuestion}"
                                         : (_difficulty == 3)
                                             ? "${questions.hardQuestions[_random.nextInt(questions.hardQuestions.length)].textQuestion}"
                                             : "${questions.easyQuestions[_random.nextInt(questions.easyQuestions.length)].textQuestion}",
-                                            textAlign: TextAlign.center,
+                                textAlign: TextAlign.center,
                                 style: TextStyle(
                                     fontSize: 20.0,
                                     fontWeight: FontWeight.bold,
                                     color: Color(0xff222222)),
                               ),
-                            );
+                            ));
                           });
                     }
                     return CircularProgressIndicator();
@@ -100,49 +100,55 @@ class PrimaryPageState extends State<PrimaryPage> {
       bottomNavigationBar: ButtonBar(
         mainAxisSize: MainAxisSize.min,
         alignment: MainAxisAlignment.center,
-        buttonMinWidth: 100.0,
+        buttonMinWidth: 110.0,
         children: <Widget>[
           new MaterialButton(
               elevation: 0.0,
               disabledColor: Color(0xff74CC84),
-              disabledTextColor: Color(0xff222222),
+              disabledTextColor: Color(0xffF1F1F1),
               color: Color(0xffF1F1F1),
               textColor: Color(0xff74CC84),
-              splashColor: Colors.blueGrey,
-              onPressed: _difficulty != 1 ? () => {
-                    setState(() {
-                      _difficulty = 1;
-                      controller.jumpToPage(0);
-                    })
-                  } : null,
+              splashColor: Color(0xff74CC84),
+              onPressed: _difficulty != 1
+                  ? () => {
+                        setState(() {
+                          _difficulty = 1;
+                          controller.jumpToPage(0);
+                        })
+                      }
+                  : null,
               child: new Text("Shallow")),
           new MaterialButton(
               elevation: 0.0,
               disabledColor: Color(0xff1B72A3),
-              disabledTextColor: Color(0xff222222),
+              disabledTextColor: Color(0xffF1F1F1),
               color: Color(0xffF1F1F1),
               textColor: Color(0xff1B72A3),
-              splashColor: Colors.blueGrey,
-              onPressed: _difficulty != 2 ? () => {
-                    setState(() {
-                      _difficulty = 2;
-                      controller.jumpToPage(0);
-                    })
-                  } : null,
+              splashColor: Color(0xff1B72A3),
+              onPressed: _difficulty != 2
+                  ? () => {
+                        setState(() {
+                          _difficulty = 2;
+                          controller.jumpToPage(0);
+                        })
+                      }
+                  : null,
               child: new Text("Middle")),
           new MaterialButton(
               elevation: 0.0,
               disabledColor: Color(0xffC87140),
-              disabledTextColor: Color(0xff222222),
+              disabledTextColor: Color(0xffF1F1F1),
               color: Color(0xffF1F1F1),
               textColor: Color(0xffC87140),
-              splashColor: Colors.blueGrey,
-              onPressed: _difficulty != 3 ? () => {
-                    setState(() {
-                      _difficulty = 3;
-                      controller.jumpToPage(0);
-                    })
-                  } : null,
+              splashColor: Color(0xffC87140),
+              onPressed: _difficulty != 3
+                  ? () => {
+                        setState(() {
+                          _difficulty = 3;
+                          controller.jumpToPage(0);
+                        })
+                      }
+                  : null,
               child: new Text("Deep"))
         ],
       ),
