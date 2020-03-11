@@ -8,12 +8,13 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xffF1F1F1),
-      appBar: AppBar(
+    // Commenting out for now for a cleaner look.
+    /*  appBar: AppBar(
         backgroundColor: Color(0xffF1F1F1),
         centerTitle: true,
         title:
             Text('Test Questions', style: TextStyle(color: Color(0xff222222))),
-      ),
+      ),*/
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

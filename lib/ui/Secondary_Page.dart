@@ -50,7 +50,7 @@ class SecondaryPageState extends State<SecondaryPage> {
         backgroundColor: Color(0xffF1F1F1),
         //`true` if you want Flutter to automatically add Back Button when needed,
         //or `false` if you want to force your own back button every where
-        title: Text('Secondary Questions',
+        title: Text("5 - 8",
             style: TextStyle(color: Color(0xff222222))),
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
@@ -78,8 +78,10 @@ class SecondaryPageState extends State<SecondaryPage> {
                                       : questions.easyQuestions.length,
                           itemBuilder: (BuildContext context, _position) {
                             return Center(
-                              child: Text(
-                                (_difficulty == 1)
+                                child: Container(
+                                padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
+                                  child: Text(
+                                  (_difficulty == 1)
                                     ? "${questions.easyQuestions[_random.nextInt(questions.easyQuestions.length)].textQuestion}"
                                     : (_difficulty == 2)
                                         ? "${questions.mediumQuestions[_random.nextInt(questions.mediumQuestions.length)].textQuestion}"
@@ -92,7 +94,7 @@ class SecondaryPageState extends State<SecondaryPage> {
                                     fontWeight: FontWeight.bold,
                                     color: Color(0xff222222)),
                               ),
-                            );
+                            ));
                           });
                     }
                     return CircularProgressIndicator();
@@ -100,12 +102,12 @@ class SecondaryPageState extends State<SecondaryPage> {
       bottomNavigationBar: ButtonBar(
         mainAxisSize: MainAxisSize.min,
         alignment: MainAxisAlignment.center,
-        buttonMinWidth: 100.0,
+        buttonMinWidth: 110.0,
         children: <Widget>[
           new MaterialButton(
               elevation: 0.0,
               disabledColor: Color(0xff74CC84),
-              disabledTextColor: Color(0xff222222),
+              disabledTextColor: Color(0xffF1F1F1),
               color: Color(0xffF1F1F1),
               textColor: Color(0xff74CC84),
               splashColor: Color(0xff74CC84),
@@ -121,7 +123,7 @@ class SecondaryPageState extends State<SecondaryPage> {
           new MaterialButton(
               elevation: 0.0,
               disabledColor: Color(0xff1B72A3),
-              disabledTextColor: Color(0xff222222),
+              disabledTextColor: Color(0xffF1F1F1),
               color: Color(0xffF1F1F1),
               textColor: Color(0xff1B72A3),
               splashColor: Color(0xff1B72A3),
@@ -137,7 +139,7 @@ class SecondaryPageState extends State<SecondaryPage> {
           new MaterialButton(
               elevation: 0.0,
               disabledColor: Color(0xffC87140),
-              disabledTextColor: Color(0xff222222),
+              disabledTextColor: Color(0xffF1F1F1),
               color: Color(0xffF1F1F1),
               textColor: Color(0xffC87140),
               splashColor: Color(0xffC87140),
