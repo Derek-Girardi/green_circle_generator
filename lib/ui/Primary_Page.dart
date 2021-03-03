@@ -26,6 +26,32 @@ class PrimaryPageState extends State<PrimaryPage> {
     super.initState();
   }
 
+  backgroundColor(){
+    var color;
+    switch (_difficulty) {
+      case 1:
+      {
+        color = Color(0xff74CC84);
+        return color;
+      }
+      case 2:
+      {
+        color = Color(0xff1B72A3);
+        return color;
+      }
+      case 3:
+      {
+        color = Color(0xffC87140);
+        return color;
+      }
+      default:
+      {
+        color = Color(0xff74CC84);
+        return color;
+      }
+    }
+  }
+
   //@override
   //void initState() {
   // controller = PageController(
@@ -43,10 +69,10 @@ class PrimaryPageState extends State<PrimaryPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffF1F1F1),
+      backgroundColor: backgroundColor(),
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        backgroundColor: Color(0xffF1F1F1),
+        backgroundColor: backgroundColor(),
         //`true` if you want Flutter to automatically add Back Button when needed,
         //or `false` if you want to force your own back button every where
         title: Text("K - 4", style: TextStyle(color: Color(0xff222222))),
@@ -118,7 +144,7 @@ class PrimaryPageState extends State<PrimaryPage> {
                       }
                   : null,
               child: new Text("Shallow")),
-          new MaterialButton(
+          new MaterialButton(       
               elevation: 0.0,
               disabledColor: Color(0xff1B72A3),
               disabledTextColor: Color(0xffF1F1F1),
